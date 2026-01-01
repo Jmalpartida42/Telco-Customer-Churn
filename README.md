@@ -39,4 +39,4 @@ Tras comparar las métricas (priorizando el **Recall** para minimizar los falsos
 ## 🚀 Cómo usar este repositorio
 1. Clona el repo: `git clone ...`
 2. Instala dependencias: `pip install -r requirements.txt`
-3. Ejecuta el notebook: `jupyter notebook churn_analysis.ipynb`
+3. Ejecuta el notebook: `churn_dataset.ipynb`
