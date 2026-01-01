@@ -1,42 +1,41 @@
 # Customer Churn Analysis | Telco Dataset
 
-Este proyecto realiza un análisis predictivo del abandono de clientes utilizando el dataset de **Telco Customer Churn de Kaggle**. El objetivo principal es identificar patrones de comportamiento y desarrollar un modelo capaz de predecir qué usuarios tienen mayor probabilidad de cancelar su servicio.
+This project performs a predictive analysis of customer attrition using the **Kaggle Telco Customer Churn** dataset. The primary objective is to identify behavioral patterns and develop a machine learning model capable of predicting which users are most likely to cancel their service.
 
 ---
 
-## 🔍 Análisis Exploratorio de Datos (EDA)
+## 🔍 Exploratory Data Analysis (EDA)
 
-Para entender qué variables influyen realmente en el Churn, realicé un análisis estadístico riguroso:
+To understand the drivers of customer churn, I conducted a rigorous statistical analysis:
 
-* **Variables Categóricas:** Utilicé la prueba de **Chi-cuadrado ($\chi^2$)** para medir la dependencia entre las categorías (como tipo de contrato,método de pago,entre otros) y la variable objetivo (Churn).
-* **Variables Numéricas:** Apliqué pruebas de **T-Student** para comparar las medias de variables como el `MonthlyCharges` y `Tenure` entre clientes que se quedaron y los que se fueron.
-* **Visualización:** Implementé visualizaciones avanzadas (Matplotlib/Seaborn) para validar los hallazgos estadísticos y observar la distribución del riesgo.
+* **Categorical Variables:** I utilized **Chi-Square ($\chi^2$)** tests to determine the statistical significance and dependency between categorical features (such as contract type, payment method, and tech support) and the target variable (Churn).
+* **Numerical Variables:** I applied **T-Student** tests to compare the distributions and means of continuous variables (like `MonthlyCharges` and `Tenure`) between churned and retained customers.
+* **Visualization:** Advanced data visualizations were implemented using **Matplotlib** and **Seaborn** to validate statistical hypotheses and observe risk distribution across segments.
+
+
+
 ---
 
-## 🛠️ Ingeniería de Características
+## 🛠️ Feature Engineering
 
-Tras el EDA, preparé los datos para los modelos de Machine Learning:
-* Encoding de variables categóricas.
-* Escalado de variables numéricas.
-* Tratamiento de valores ausentes y desbalanceo de clases.
+Following the EDA, the data was pre-processed for Machine Learning:
+* **Encoding:** Transformation of categorical variables into numerical format.
+* **Scaling:** Normalization of numerical features to ensure model convergence.
+* **Class Imbalance:** Handled the skewed distribution of the target variable to improve model sensitivity.
+
 ---
 
-## 🤖 Comparativa de Modelos
+## 🤖 Model Comparison
 
-Entrené y evalué tres arquitecturas distintas para encontrar la solución óptima:
+I trained and evaluated three distinct architectures to find the optimal solution for identifying at-risk customers:
 
-| Modelo | Ventajas | Desempeño (Recall categoria 1) |
+| Model | Key Advantages | Performance (Recall Class 1) |
 | :--- | :--- | :--- |
-| **Random Forest** | Excelente interpretabilidad y manejo de outliers.| *59%* |
-| **XGBoost** | Alta precisión mediante Boosting de gradiente. | *70%* |
-| **Red Neuronal** | Capacidad para detectar patrones complejos no lineales. | *78%* |
+| **Random Forest** | High interpretability and robust to outliers. | **59%** |
+| **XGBoost** | High-performance Gradient Boosting. | **70%** |
+| **Neural Network** | Captures complex non-linear patterns. | **78%** |
 
-### 🏆 Selección del Modelo
-Tras comparar las métricas (priorizando el **Recall** para minimizar los falsos negativos en la fuga de clientes), el modelo seleccionado como mejor opción fue el de **Red Neuronal**.
 
----
 
-## 🚀 Cómo usar este repositorio
-1. Clona el repo: `git clone ...`
-2. Instala dependencias: `pip install -r requirements.txt`
-3. Ejecuta el notebook: `churn_dataset.ipynb`
+### 🏆 Model Selection
+After comparing metrics—prioritizing **Recall** to minimize false negatives (failing to identify customers about to leave)—the **Neural Network** was selected as the best performing model.
