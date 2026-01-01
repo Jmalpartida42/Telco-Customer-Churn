@@ -25,14 +25,14 @@ Tras el EDA, preparé los datos para los modelos de Machine Learning:
 
 Entrené y evalué tres arquitecturas distintas para encontrar la solución óptima:
 
-| Modelo | Ventajas | Desempeño (Accuracy/Recall/Precision) |
+| Modelo | Ventajas | Desempeño (Recall categoria 1) |
 | :--- | :--- | :--- |
-| **Random Forest** | Excelente interpretabilidad y manejo de outliers.
-| **XGBoost** | Alta precisión mediante Boosting de gradiente. 
-| **Redes Neuronales** | Capacidad para detectar patrones complejos no lineales. 
+| **Random Forest** | Excelente interpretabilidad y manejo de outliers.| *59%* |
+| **XGBoost** | Alta precisión mediante Boosting de gradiente. | *70%* |
+| **Red Neuronal** | Capacidad para detectar patrones complejos no lineales. | *78%* |
 
 ### 🏆 Selección del Modelo
-Tras comparar las métricas (priorizando el **Recall** para minimizar los falsos negativos en la fuga de clientes), el modelo seleccionado como mejor opción fue el de **Redes Neuronales**.
+Tras comparar las métricas (priorizando el **Recall** para minimizar los falsos negativos en la fuga de clientes), el modelo seleccionado como mejor opción fue el de **Red Neuronal**.
 
 ---
 
